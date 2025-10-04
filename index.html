@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NRIO Business Cards</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: #e8e8e8;
+            font-family: 'Georgia', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .card {
+            width: 3.5in;
+            height: 2in;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        h2 {
+            color: #1a1a2e;
+            margin: 0 0 15px 0;
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        /* Card 1 - Premium Dark Sky */
+        .card-1 {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: white;
+            padding: 24px 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .card-1 .logo-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        
+        .card-1 .icon {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+        }
+        
+        .card-1 .icon svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .card-1 .brand-text {
+            flex: 1;
+        }
+        
+        .card-1 .brand-name {
+            font-size: 11px;
+            line-height: 1.3;
+            margin-bottom: 3px;
+        }
+        
+        .card-1 .brand-name .gold {
+            color: #FFD700;
+            font-weight: bold;
+        }
+        
+        .card-1 .website {
+            font-size: 13px;
+            color: #FFD700;
+            font-weight: bold;
+            letter-spacing: 0.3px;
+        }
+        
+        .card-1 .features {
+            font-size: 9px;
+            line-height: 1.5;
+            color: #ddd;
+            margin: 10px 0;
+            padding: 8px 0;
+            border-top: 1px solid rgba(255, 215, 0, 0.3);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .card-1 .feature-item {
+            margin: 2px 0;
+        }
+        
+        .card-1 .feature-highlight {
+            color: #FFD700;
+            font-weight: bold;
+        }
+        
+        .card-1 .contact {
+            font-size: 10px;
+            line-height: 1.5;
+        }
+        
+        .card-1 .name {
+            font-size: 13px;
+            font-weight: bold;
+            color: #FFD700;
+            margin-bottom: 3px;
+        }
+        
+        .card-1 .title {
+            font-size: 9px;
+            margin-bottom: 6px;
+            opacity: 0.9;
+        }
+        
+        /* Card 2 - Clean Professional */
+        .card-2 {
+            background: white;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-2 .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2a2a3e 100%);
+            color: white;
+            padding: 16px 24px;
+            flex-shrink: 0;
+        }
+        
+        .card-2 .logo-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+        
+        .card-2 .icon {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .card-2 .icon svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .card-2 .brand-name {
+            font-size: 10px;
+            line-height: 1.2;
+            flex: 1;
+        }
+        
+        .card-2 .brand-name .gold {
+            color: #FFD700;
+            font-weight: bold;
+        }
+        
+        .card-2 .website {
+            font-size: 12px;
+            color: #FFD700;
+            font-weight: bold;
+        }
+        
+        .card-2 .tagline {
+            font-size: 9px;
+            color: #FFD700;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 4px;
+        }
+        
+        .card-2 .content {
+            padding: 14px 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .card-2 .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 12px;
+            font-size: 8px;
+            color: #333;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+        
+        .card-2 .feature-label {
+            color: #1a1a2e;
+            font-weight: bold;
+        }
+        
+        .card-2 .contact {
+            border-top: 2px solid #FFD700;
+            padding-top: 8px;
+            font-size: 9px;
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        .card-2 .name {
+            font-size: 11px;
+            font-weight: bold;
+            color: #1a1a2e;
+            margin-bottom: 2px;
+        }
+        
+        .card-2 .title {
+            font-size: 8px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+        
+        /* Card 3 - Bold & Modern */
+        .card-3 {
+            background: white;
+            position: relative;
+        }
+        
+        .card-3 .left-panel {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 1.3in;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0a 100%);
+            color: white;
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .card-3 .icon-large {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 10px;
+        }
+        
+        .card-3 .icon-large svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .card-3 .website-vertical {
+            font-size: 14px;
+            color: #FFD700;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        
+        .card-3 .right-panel {
+            position: absolute;
+            left: 1.3in;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .card-3 .brand-name {
+            font-size: 12px;
+            line-height: 1.3;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+        
+        .card-3 .brand-name .gold {
+            color: #FFD700;
+            font-weight: bold;
+        }
+        
+        .card-3 .tagline {
+            font-size: 8px;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .card-3 .features {
+            font-size: 7.5px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .card-3 .feature-bullet {
+            color: #FFD700;
+            font-weight: bold;
+            margin-right: 4px;
+        }
+        
+        .card-3 .contact {
+            font-size: 8px;
+            line-height: 1.5;
+            color: #333;
+        }
+        
+        .card-3 .name {
+            font-size: 10px;
+            font-weight: bold;
+            color: #1a1a2e;
+            margin-bottom: 2px;
+        }
+        
+        .card-3 .title {
+            font-size: 7px;
+            color: #FFD700;
+            font-weight: bold;
+        }
+        
+        .note {
+            max-width: 600px;
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+            font-family: Arial, sans-serif;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h2>Option 1: Dark Sky Premium</h2>
+    <div class="card card-1">
+        <div class="logo-section">
+            <div class="icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="50,15 45,50 55,50" fill="white"/>
+                    <polygon points="50,10 47,20 53,20" fill="#FFD700"/>
+                    <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="white" stroke-width="2" transform="rotate(-30 50 50)"/>
+                </svg>
+            </div>
+            <div class="brand-text">
+                <div class="brand-name">
+                    <span class="gold">N</span>icholas <span class="gold">R</span>emote<br>
+                    <span class="gold">I</span>maging <span class="gold">O</span>bservatories
+                </div>
+                <div class="website">NRIO.net</div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature-item"><span class="feature-highlight">Bortle 1</span> Dark Skies • Pie Town, NM</div>
+            <div class="feature-item"><span class="feature-highlight">280+</span> Clear Nights/Year • <span class="feature-highlight">7,700 ft</span> Elevation</div>
+            <div class="feature-item"><span class="feature-highlight">1.2"</span> Average Seeing • World-Class Remote Hosting</div>
+        </div>
+        
+        <div class="contact">
+            <div class="name">Tim Ray</div>
+            <div class="title">Founder & Owner</div>
+            <div>573-259-3376 • Tim@NRIO.net</div>
+            <div style="font-size: 8px; margin-top: 4px; color: #FFD700;">Call or email to reserve your pier</div>
+        </div>
+    </div>
+
+    <h2>Option 2: Professional Clean</h2>
+    <div class="card card-2">
+        <div class="header">
+            <div class="logo-row">
+                <div class="icon">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="50,15 45,50 55,50" fill="white"/>
+                        <polygon points="50,10 47,20 53,20" fill="#FFD700"/>
+                        <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="white" stroke-width="2" transform="rotate(-30 50 50)"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="brand-name">
+                        <span class="gold">N</span>icholas <span class="gold">R</span>emote <span class="gold">I</span>maging <span class="gold">O</span>bservatories
+                    </div>
+                    <div class="website">NRIO.net</div>
+                </div>
+            </div>
+            <div class="tagline">World-Class Remote Imaging in Pie Town, New Mexico</div>
+        </div>
+        
+        <div class="content">
+            <div class="features">
+                <div><span class="feature-label">Sky Quality:</span> Bortle 1</div>
+                <div><span class="feature-label">Clear Nights:</span> 280+/year</div>
+                <div><span class="feature-label">Elevation:</span> 7,700 feet</div>
+                <div><span class="feature-label">Seeing:</span> 1.2" average</div>
+                <div><span class="feature-label">Location:</span> Continental Divide</div>
+                <div><span class="feature-label">Service:</span> Expert Setup & QA</div>
+            </div>
+            
+            <div class="contact">
+                <div class="name">Tim Ray, Owner</div>
+                <div class="title">Founder & Chief Astronomer</div>
+                <div>573-259-3376 • Tim@NRIO.net</div>
+                <div style="margin-top: 3px; font-size: 8px; font-style: italic;">Reserve your pier today</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Option 3: Bold Modern Split</h2>
+    <div class="card card-3">
+        <div class="left-panel">
+            <div>
+                <div class="icon-large">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="50,15 45,50 55,50" fill="white"/>
+                        <polygon points="50,10 47,20 53,20" fill="#FFD700"/>
+                        <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="white" stroke-width="2.5" transform="rotate(-30 50 50)"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="website-vertical">NRIO.net</div>
+        </div>
+        
+        <div class="right-panel">
+            <div>
+                <div class="brand-name">
+                    <span class="gold">N</span>icholas <span class="gold">R</span>emote<br>
+                    <span class="gold">I</span>maging <span class="gold">O</span>bservatories
+                </div>
+                <div class="tagline">Premier Remote Hosting • Pie Town, New Mexico</div>
+                
+                <div class="features">
+                    <div><span class="feature-bullet">★</span> Bortle 1 Dark Skies</div>
+                    <div><span class="feature-bullet">★</span> 280+ Clear Nights Annually</div>
+                    <div><span class="feature-bullet">★</span> 7,700 ft Elevation</div>
+                    <div><span class="feature-bullet">★</span> 1.2" Average Seeing</div>
+                    <div><span class="feature-bullet">★</span> Expert Setup & QA</div>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <div class="name">Tim Ray</div>
+                <div class="title">FOUNDER & OWNER</div>
+                <div>573-259-3376</div>
+                <div>Tim@NRIO.net</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="note">
+        <strong>All designs are 3.5" × 2" standard business card size.</strong><br>
+        Each showcases NRIO's key differentiators: Bortle 1 skies, 280+ clear nights, elevation, exceptional seeing conditions, and expert remote hosting service. Ready for professional printing.
+    </div>
+</body>
+</html>
